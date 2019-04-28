@@ -1,0 +1,17 @@
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoTeste.deps.json
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoTeste.runtimeconfig.json
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoTeste.runtimeconfig.dev.json
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoTeste.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoTeste.pdb
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoAPI.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\bin\Debug\netcoreapp2.1\ProjetoAPI.pdb
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.csprojAssemblyReference.cache
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.csproj.CoreCompileInputs.cache
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.AssemblyInfoInputs.cache
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.AssemblyInfo.cs
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.csproj.CopyComplete
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.dll
+D:\adriane\teste\backend-test\Projeto\ProjetoTeste\obj\Debug\netcoreapp2.1\ProjetoTeste.pdb

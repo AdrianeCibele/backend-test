@@ -1,0 +1,4 @@
+﻿@using ProjetoAPI.Models
+@model List<Cidade>
+
+@Html.DropDownList("Cidade.IdCidade", new SelectList(Model, "IdCidade", "Nome"))

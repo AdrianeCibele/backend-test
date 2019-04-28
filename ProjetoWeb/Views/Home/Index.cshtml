@@ -1,0 +1,84 @@
+﻿@using ProjetoAPI.Models
+@model IEnumerable<Usuario>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Lista de Usuários</h4>
+            @{
+                if (ViewData["MessageRetorno"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        <h2>@ViewData["MessageRetorno"]</h2>
+                    </div>
+                }
+
+
+
+            }
+
+
+            <div class="table-responsive">
+
+                <table id="mytable" class="table table-bordred table-striped">
+                    <thead>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Logradouro</th>
+                    <th>Número</th>
+                    <th>Bairro</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Alterar</th>
+                    <th>Delete</th>
+                    </thead>
+                    <tbody>
+
+                        @{
+                            foreach (var item in Model)
+                            {
+                        <tr>
+
+                            <td>@item.Nome</td>
+                            <td>@item.Email</td>
+                            <td>@item.Telefone</td>
+                            <td>@item.Logradouro</td>
+                            <td>@item.LogradouroNumero</td>
+                            <td>@item.Bairro</td>
+                            <td>@item.Estado.Nome</td>
+                            <td>@item.Cidade.Nome</td>
+
+                            <td><a class="btn btn-primary btn-xs" asp-route-id="@item.IdUsuario" asp-controller="Home" asp-action="CadastroUsuarios"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td><a class="btn btn-primary btn-xs" onclick="return ExcluirUsuario()" asp-route-id="@item.IdUsuario" asp-controller="Home" asp-action="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+                        </tr>
+                            }
+
+                        }
+
+
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+ 
+    function ExcluirUsuario() {
+
+        if (confirm('Confirma a exclusão?')) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>

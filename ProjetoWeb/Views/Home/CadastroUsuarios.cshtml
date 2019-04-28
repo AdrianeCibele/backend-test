@@ -1,0 +1,209 @@
+﻿@using ProjetoAPI.Models
+@inject ProjetoWeb.Services.EstadoService estados
+@inject ProjetoWeb.Services.CidadeService cidades
+@model Usuario
+
+
+<form id="form_cadastro" method="post" asp-controller="Home" asp-action="Manager">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Lista de Usuários</h4>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input asp-for="Nome" class="form-control" placeholder="Seu Nome">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Email">E-mail</label>
+                <input asp-for="Email" class="form-control" placeholder="Email">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Telefone">Telefone</label>
+                <input asp-for="Telefone" class="form-control" placeholder="Telefone">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Logradouro">Logradouro</label>
+                <input asp-for="Logradouro" class="form-control" placeholder="Logradouro">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="LogradouroNumero">Número</label>
+                <input asp-for="LogradouroNumero" class="form-control" placeholder="Logradouro Número">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Bairro">Bairro</label>
+                <input asp-for="Bairro" class="form-control" placeholder="Bairro">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Estado</label>
+                <div>
+                    @{
+                        if (Model.IdUsuario > 0)
+                        {
+                            @Html.DropDownList("Estado.IdEstado", new SelectList(estados.ListEstados(), "IdEstado", "Nome", Model.Estado.IdEstado))
+                        }
+                        else
+                        {                        
+
+                            @Html.DropDownList("Estado.IdEstado", new SelectList(estados.ListEstados(), "IdEstado", "Nome"), "--Selecione--")
+
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Cidade</label>
+                <div id="divCidade">
+                    @{
+                        if (Model.IdUsuario > 0)
+                        {
+                            @Html.DropDownList("Cidade.IdCidade", new SelectList(cidades.ListCidades(Model.Estado.IdEstado), "IdCidade", "Nome"))
+                        }
+                        else
+                        {
+                            <select  asp-for="Cidade.IdCidade">
+                                <option selected="selected" value="">Selecione</option>
+                            </select>
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="button" onclick='history.go(-1)' class="btn btn-primary">Voltar</button>
+
+    <input type="hidden" asp-for="IdUsuario" />
+</form>
+
+
+<script>
+
+
+
+    $("#form_cadastro").validate({
+        rules: {
+            Nome: {
+                required: true, minlength: 3
+            },
+            Email: {
+                required: true, email: true
+            }
+            ,
+            Telefone: {
+                required: true
+            }
+            ,
+            Logradouro: {
+                required: true
+            },
+            LogradouroNumero: {
+                required: true
+            },
+            'Cidade.IdCidade': {
+                required: true
+            },
+            'Estado.IdEstado': {
+                required: true
+            }
+        },
+
+        messages: {
+            Nome: {
+                required: "Por favor, informe seu nome",
+                minlength: "O nome deve ter pelo menos 3 caracteres"
+            },
+            Email: {
+                required: "Por favor, informe seu email",
+                email: "E-mail Inválido"
+            },
+            Telefone: {
+                required: "Por favor, informe seu Telefone"
+            },
+            Logradouro: {
+                required: "Por favor, informe seu email"
+            },
+            LogradouroNumero: {
+                required: "Por favor, informe seu Número do Logradouro"
+            },
+            'Cidade.IdCidade': {
+                required: "Por favor, selecione a Cidade"
+            },
+            'Estado.IdEstado': {
+                required: "Por favor, selecione o Estado"
+            }
+        }
+    });
+
+    $(function () {
+        $("#form_cadastro").validate();
+    });
+
+
+
+    $("#Estado_IdEstado").change(function () {
+
+   
+        $.ajax({
+            type: 'Get',
+            url: '/Home/ListCidade/',
+            data: { id: $("#Estado_IdEstado").val() },
+            cache: false,
+            dataType: 'html',
+            success: function (result) {
+                console.log(result);
+
+                $("#divCidade").html(result);
+            },
+            error: function (result) {
+                return false;
+            }
+        });
+    });
+
+
+</script>
