@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoAPI", "Projeto\ProjetoAPI.csproj", "{2466DAD9-033F-4162-AE3F-2E2D2621F80F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoAPI", "ProjetoAPI\ProjetoAPI.csproj", "{2466DAD9-033F-4162-AE3F-2E2D2621F80F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoWeb", "ProjetoWeb\ProjetoWeb.csproj", "{5E645A85-0D6A-460D-ADC7-D4D249737C6F}"
 	ProjectSection(ProjectDependencies) = postProject
